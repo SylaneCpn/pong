@@ -151,8 +151,8 @@
                 ballSpeedY = deltaY * 0.1;
 
                 // Increase ball speed slightly
-                ballSpeedX *= 1.02;
-                ballSpeedY *= 1.02;
+                ballSpeedX *= 1.05;
+                ballSpeedY *= 1.05;
             }
 
             // Check for scoring
@@ -233,15 +233,8 @@
             }
         }
         
-        function clearCanvas() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-        }
+
         // Reset game function
         function resetGame() {
-            leftPlayerScore = 0;
-            rightPlayerScore = 0;
-            resetBall();
-            gameStarted = false;
-            document.querySelector('div').style.display = 'flex';
-            clearCanvas();
+            location.reload();
         }
