@@ -33,25 +33,12 @@
         let rightPaddleMoveDown = false;
 
         // Event listeners for keydown and keyup events
-        /*window.addEventListener("keydown", handleKeyDown);
-        window.addEventListener("keyup", handleKeyUp);*/
+        window.addEventListener("keydown", handleKeyDown);
+        window.addEventListener("keyup", handleKeyUp);
 
-        window.addEventListener("keyright", handleKeyRight);
-        window.addEventListener("keyleft", handleKeyLeft);
 
         // Functions to handle key events
-        function handleKeyLeft(event) {
-            switch (event.keyCode) {
-                case 90: // Z key
-                    leftPaddleMoveUp = true;
-                    break;
-                case 83: // S key
-                    leftPaddleMoveDown = true;
-                    break;
-            }
-        }
-
-         /*function handleKeyUp(event) {
+       function handleKeyUp(event) {
             switch (event.keyCode) {
                 case 90: // Z key
                     leftPaddleMoveUp = true;
@@ -66,19 +53,9 @@
                     rightPaddleMoveDown = true;
                     break;
             }
-        }*/
-
-        function handleKeyRight(event) {
-            switch (event.keyCode) {
-                case 38: // Up arrow
-                    rightPaddleMoveUp = false;
-                    break;
-                case 40: // Down arrow
-                    rightPaddleMoveDown = false;
-                    break;
-            }
         }
-        /*function handleKeyDown(event) {
+
+        function handleKeyDown(event) {
             switch (event.keyCode) {
                 case 90: // Z key
                     leftPaddleMoveUp = false;
@@ -93,7 +70,7 @@
                     rightPaddleMoveDown = false;
                     break;
             }
-        }*/
+        }
 
         // Function to start the game
         function startGame(players) {
@@ -206,13 +183,10 @@
 
             // If in 1 player mode, move the right paddle automatically (AI)
             if (onePlayerMode) {
-                window.removeEventListener("keyright", handleKeyRight);
                 moveAI();
             }
 
-            else {
-                 window.addEventListener("keyright", handleKeyRight);   
-            }
+            
         }
 
         // Move the paddles
